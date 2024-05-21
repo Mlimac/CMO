@@ -1,0 +1,24 @@
+.contatos-direita {
+    position: fixed;
+    bottom: 35px;
+    right: 35px;
+    z-index: 9999;
+    display: flex;
+  }
+  
+  .contato-item {
+    margin-right: 10px;
+  }
+  
+  .contato-item:last-child {
+    margin-right: 0;
+  }
+  
+  .contato-item img {
+    width: 50px;
+    transition: transform 0.5s ease;
+  }
+  
+  .contato-item:hover img {
+    transform: scale(1.3);
+  }

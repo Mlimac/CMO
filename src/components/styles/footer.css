@@ -1,0 +1,36 @@
+.container {
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(218, 211, 18); 
+  padding: 10px 0;
+  backdrop-filter: blur(5px);
+}
+
+.rodape {
+  text-align: center;
+}
+
+.contatos-esquerda {
+  position: fixed;
+  bottom: 35px;
+  left: 35px;
+  z-index: 9999;
+  display: flex;
+}
+
+.contato-item {
+  margin-right: 10px;
+}
+
+.contato-item img {
+  width: 50px;
+  transition: transform 0.5s ease;
+}
+
+.contato-item:hover img {
+  transform: scale(1.3);
+}
+
+.copyright {
+  text-align: center;
+}

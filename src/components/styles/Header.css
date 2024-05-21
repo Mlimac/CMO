@@ -1,0 +1,114 @@
+.header {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: rgba(0, 0, 0, 0.114); /* Adicione uma cor de fundo com transparência */
+  z-index: 100;
+  position: fixed;
+  color: black !important;
+  backdrop-filter: blur(5px); /* Adicione o efeito de desfoque */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.mobile-menu {
+  cursor: pointer;
+  display: none;
+}
+
+.mobile-menu div {
+  width: 32px;
+  height: 2px;
+  background: white;
+  margin: 8px;
+}
+
+@media (max-width: 999px) {
+  body {
+    overflow-x: hidden;
+  }
+  .header__lists {
+    position: absolute;
+    top: 13vh;
+    right: 0;
+    width: 50vw;
+    height: 92vh;
+    background: rgb(218, 211, 18);
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateX(100%);
+  }
+  .header__lists li {
+    margin-left: 0;
+    color: black;
+    opacity: 0;
+  }
+  .mobile-menu {
+    display: block;
+  }
+}
+
+.header__lists.active {
+  transform: translateX(0);
+}
+
+.header__left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__left > img {
+  width: 90px;
+  height: 80px;
+  padding: 5px;
+}
+
+.header__left > h2 {
+  font-size: 40px;
+  color: black;
+}
+
+.header__center {
+  display: flex;
+}
+
+.header__center > li {
+  text-decoration: none;
+}
+
+.header__lists {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__lists > li {
+  list-style-type: none;
+  padding: 19px;
+}
+
+.header__lists > li > a {
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 30px;
+  display: inline-block;
+  transition: transform 0.3s ease, border-color 0.3s ease, color 0.3s ease; /* Adiciona a transição para a borda */
+  border: 3px solid rgb(0, 0, 0); /* Altera a cor e a opacidade da borda */
+  color: black;
+  background-color: rgba(0, 0, 0, 0.279); /* Altera a cor de fundo dentro da borda */
+  padding: 10px 20px; /* Adiciona um preenchimento interno aos botões */
+}
+
+.header__lists > li > a:hover,
+.header__lists > li > a:focus {
+  color: white;
+  border-color: rgba(64, 64, 64, 1); /* Altera a cor da borda ao focar */
+  background-color: rgba(255, 234, 0, 0.107); /* Altera a cor de fundo dentro da borda ao focar */
+  transform: scale(1.1);
+}
