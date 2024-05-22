@@ -46,7 +46,7 @@ section.module.content{
     padding: 40px 0;
     background: #fff;
     border: solid 5px;
-    border-color: rgb(218, 211, 18);
+    border-color: rgb(218, 135, 18);
 }
 
 section.module.parallax{
@@ -109,7 +109,7 @@ section.module.parallax-1{
 .minutos{
     font-size: 25px;
     border-radius: 15px;
-    background-color: rgba(218, 211, 18, 0.831);
+    background-color: rgb(218, 135, 18);
 }
 .minutos a{
     text-decoration: none;
@@ -140,7 +140,7 @@ section.module.parallax-1{
 .slide-content{
     border: solid;
     border-radius: 30px;
-    border-color: rgb(218, 211, 18);;
+    border-color: rgb(218, 135, 18);
     height: 500px;
    
 }
@@ -171,7 +171,7 @@ section.module.parallax-1{
   top: 0;
   height: 100%;
   width: 100%;
-  background-color: rgb(218, 211, 18);
+  background-color: rgb(218, 135, 18);
   border-radius: 25px 25px 0 25px;
 }
 
@@ -183,7 +183,7 @@ section.module.parallax-1{
      bottom: -80px;
      height: 80px;
      width: 20px;
-     background-color:  rgb(218, 211, 18);
+     background-color:  rgb(218, 135, 18);
 }
 .overlay::after{
     border-radius: 0 40px 0 0;
@@ -222,7 +222,7 @@ section.module.parallax-1{
     font-size: 18px;
     color: white;
     padding: 8px 16px;
-    background-color:  rgb(218, 211, 18);
+    background-color:  rgb(218, 135, 18);
     border-radius: 6px;
     margin: 14px;
     cursor: pointer;
@@ -256,7 +256,7 @@ iframe{
 
 .portao{
     padding: 50px;
-    border: solid 5px rgb(218, 211, 18);
+    border: solid 5px rgb(218, 135, 18);
 }
 .portao h1{
     text-align: center;
@@ -266,7 +266,7 @@ iframe{
 
 .santa{
     padding: 50px;
-    border: solid 5px rgb(218, 211, 18);
+    border: solid 5px rgb(218, 135, 18);
     
     
 }
@@ -285,7 +285,7 @@ iframe{
 }
 
 .conserto h4{
-    color:rgb(218, 211, 18);
+    color:rgb(218, 135, 18);
 }
 
 
@@ -293,7 +293,7 @@ iframe{
     padding: 20px 0;
     background: #fff;
     border: solid 5px;
-    border-color: rgb(218, 211, 18);;
+    border-color: rgb(218, 135, 18);
 }
 .module-content-1 h4{
     text-align: center;
@@ -357,7 +357,7 @@ form{
 form button{
     margin-top: 2rem;
     border-radius: 15px;
-    background-color:  rgb(218, 211, 18);
+    background-color:  rgb(218, 135, 18);;
     font-size: 30px;    
 }
 

@@ -98,17 +98,44 @@ html {
   font-size: 20px;
   border-radius: 30px;
   display: inline-block;
-  transition: transform 0.3s ease, border-color 0.3s ease, color 0.3s ease; /* Adiciona a transição para a borda */
-  border: 3px solid rgb(0, 0, 0); /* Altera a cor e a opacidade da borda */
+  transition: transform 0.3s ease, border-color 0.3s ease, color 0.3s ease; 
+  border: 3px solid rgb(0, 0, 0); 
   color: black;
-  background-color: rgba(0, 0, 0, 0.279); /* Altera a cor de fundo dentro da borda */
-  padding: 10px 20px; /* Adiciona um preenchimento interno aos botões */
+  background-color: rgba(0, 0, 0, 0.279); 
+  padding: 10px 20px; 
 }
 
 .header__lists > li > a:hover,
 .header__lists > li > a:focus {
   color: white;
-  border-color: rgba(64, 64, 64, 1); /* Altera a cor da borda ao focar */
-  background-color: rgba(255, 234, 0, 0.107); /* Altera a cor de fundo dentro da borda ao focar */
+  border-color: rgba(64, 64, 64, 1); 
+  background-color: rgba(255, 234, 0, 0.107);
   transform: scale(1.1);
+}
+
+.perfil {
+  font-size: 20px;
+  border-radius: 30px;
+  display: inline-block;
+  transition: transform 0.3s ease, border-color 0.3s ease, color 0.3s ease; 
+  border: 3px solid rgb(0, 0, 0); 
+  color: black;
+  background-color: rgba(0, 0, 0, 0.279); 
+  padding: 10px 20px; 
+  right: 35px;
+  height: 23px;
+  width: 23px;
+  transition: transform 0.7s; 
+}
+
+.perfil:hover {
+  transform: scale(1.1); 
+  color: white; 
+}
+
+
+.icon-perfil {
+  position: fixed;
+  bottom: 35px;
+  left: 35px;
 }

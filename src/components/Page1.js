@@ -63,7 +63,7 @@ function Page1(){
                 <div className='mapa'>
                     
                  <div className='portao'>
-                    <h1>Portão</h1>
+                    <h1>Rebouças</h1>
                     <iframe title='CMO' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28826.77451840247!2d-49.320364832565886!3d-25.426666214059896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce48c9eafed17%3A0x4194004e10920a8f!2sCasa%20do%20Microondas!5e0!3m2!1spt-BR!2sbr!4v1715124704168!5m2!1spt-BR!2sbr"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 
@@ -88,8 +88,8 @@ function Page1(){
                 <br></br>
                 <br></br>
             <form>
-            <h1>Faça seu Cadastro</h1>
-                <h3>Login</h3>
+            <h1>Nos conte seu problema</h1>
+                <h3></h3>
                 <div className='inputform'>
                     <input type='text' placeholder='Nome'/>
                 </div>
@@ -99,7 +99,7 @@ function Page1(){
                 </div>
 
                 <div className='inputform'>
-                    <input type='password' placeholder='Senha'/>
+                    <input type='password' placeholder=''/>
                 </div>
                 <div className='botaocad'>
                 <button className='cad'>Cadastre-se</button>

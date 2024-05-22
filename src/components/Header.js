@@ -1,5 +1,6 @@
 import './styles/Header.css'
 import logo from './styles/images/logocmo.png'
+import user from './styles/images/Usuario.png'
 import './Page1'
 import './Modal'
 
@@ -64,6 +65,14 @@ function Header(){
       <div className="header__right">
         
       </div>
+      <div className='user login'>
+  
+    <a href='login user'>
+      <img className='perfil' src={user} alt="usuario" />
+    </a>
+  
+</div>
+
     </div>
     </nav>
     )
