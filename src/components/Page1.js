@@ -99,7 +99,7 @@ function Page1(){
                 </div>
 
                 <div className='inputform'>
-                    <input type='password' placeholder=''/>
+                    <input type='text' placeholder='Descreva aqui seu problema'/>
                 </div>
                 <div className='botaocad'>
                 <button className='cad'>Cadastre-se</button>
