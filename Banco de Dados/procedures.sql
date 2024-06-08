@@ -1,7 +1,8 @@
-use cmo;
+use CMO;
 drop procedure if exists sp_ins_servico;
 
-set delimiter //
+delimiter //
+
 create procedure SP_Ins_servico(
   in tit varchar(50),
   in descricao varchar (1000),
@@ -35,7 +36,7 @@ set delimiter ;
 
 
 drop procedure if exists SP_Ins_Marca;
-set delimiter //
+delimiter //
 create procedure SP_Ins_Marca(
     in descricao varchar(100),
     in url_marca varchar(100),
@@ -99,3 +100,4 @@ end if;
 
 end #
 delimiter ;
+
