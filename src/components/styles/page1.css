@@ -238,18 +238,9 @@ section.module.parallax-2 h1{
     color: black;
 
 }
-<<<<<<< HEAD
-
-
-/*começo dos mapas*/
-iframe{
-    width:500px;
-    height: 500px;
-=======
 iframe{
     width:300px;
     height: 200px;
->>>>>>> 169aa025b90a2a8f32edd6318d7964cf54fa0631
     border-radius: 20px;
 }
 .local{
@@ -257,30 +248,6 @@ iframe{
     font-size: 30px;
 }
 .mapa{
-<<<<<<< HEAD
-    padding: 50px;
-    justify-content: space-around;
-    display: flex;
-}
-
-.reboucas{
-    padding: 50px;
-    border: solid 5px rgb(218, 135, 18);
-    display:flex ;
-}
-
-
-.local{
-    font-family: "Oswald", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 20px;
-    font-style: normal;
-}
-
-.estacionamento h3{
-    font-size: 30px;
-    word-wrap: break-word;
-=======
     display: flex;
     flex-wrap: wrap;
     padding: 50px;
@@ -295,18 +262,13 @@ iframe{
     text-align: center;
     font-size: 25px;
     color: black;
->>>>>>> 169aa025b90a2a8f32edd6318d7964cf54fa0631
 }
 
 .santa{
     padding: 50px;
     border: solid 5px rgb(218, 135, 18);
-<<<<<<< HEAD
-    display: flex;
-=======
     
     
->>>>>>> 169aa025b90a2a8f32edd6318d7964cf54fa0631
 }
 
 .santa h1{
@@ -314,11 +276,6 @@ iframe{
     font-size: 25px;
     color: black;
 }
-<<<<<<< HEAD
-/*fim dos mapas*/
-
-=======
->>>>>>> 169aa025b90a2a8f32edd6318d7964cf54fa0631
 
 .conserto{
     color: white;
@@ -424,9 +381,3 @@ ul li{
     border-radius: 30px;
     transition: 0.6s;
 }
-<<<<<<< HEAD
-html{
-    scroll-behavior: smooth;
-}
-=======
->>>>>>> 169aa025b90a2a8f32edd6318d7964cf54fa0631
