@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -9,7 +9,9 @@ import image4 from './styles/images/slides/acessorios.png';
 import image5 from './styles/images/slides/reforma.png';
 import image6 from './styles/images/slides/novos.png';
 
-const data = [
+import api from "../api/api.js"
+
+const data1 = [
   {
     name: 'Conserto de Microondas',
     img: image1,
@@ -25,6 +27,7 @@ const data = [
     img: image4,
     review: 'Temos Pratos, Roldanas, Cruzetas, e muito mais!',
   },
+
   {
     name: 'Reforma',
     img: image5,
@@ -43,6 +46,25 @@ const data = [
 ];
 
 function Slide() {
+
+  const [servicos, setServicos] = useState([]);
+
+  var data = servicos;
+  
+useEffect(function(){
+  api.get("/servicos")
+    .then(function(resp){
+      //data = resp
+      setServicos(resp.data);
+      
+    })
+    .catch(function(){
+      alert("Erro ao carregar os serviços.");
+    });
+
+}, []);
+
+
   const settings = {
     dots: true,
     speed: 500,
@@ -66,7 +88,7 @@ function Slide() {
                   </div>
                   <div className='card-content'>
                     <h2 className='tipo-serviço'>{d.name}</h2>
-                    <p className='descrição'>{d.review}</p>
+                    <p className='descrição'>{d.desc}</p>
                   </div>
                 </div>
               </div>
