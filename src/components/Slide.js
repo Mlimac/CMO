@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -8,8 +8,7 @@ import image3 from './styles/images/slides/entrega.jpg';
 import image4 from './styles/images/slides/acessorios.png';
 import image5 from './styles/images/slides/reforma.png';
 import image6 from './styles/images/slides/novos.png';
-
-import api from "../api/api.js"
+import api from '../api/api.js'
 
 const data1 = [
   {
@@ -27,7 +26,6 @@ const data1 = [
     img: image4,
     review: 'Temos Pratos, Roldanas, Cruzetas, e muito mais!',
   },
-
   {
     name: 'Reforma',
     img: image5,
@@ -46,24 +44,17 @@ const data1 = [
 ];
 
 function Slide() {
-
   const [servicos, setServicos] = useState([]);
 
-  var data = servicos;
-  
-useEffect(function(){
-  api.get("/servicos")
-    .then(function(resp){
-      //data = resp
-      setServicos(resp.data);
-      
-    })
-    .catch(function(){
-      alert("Erro ao carregar os serviços.");
-    });
-
-}, []);
-
+  useEffect(() => {
+    api.get('/servicos')
+       .then((resp) => {
+        setServicos(resp.data);
+       })
+       .catch((err) => {
+        alert('Erro ao carregar servicos');
+       })
+  }, []);
 
   const settings = {
     dots: true,
@@ -76,19 +67,19 @@ useEffect(function(){
     <div className=''>
       <div className=''>
         <Slider {...settings}>
-          {data.map((d, index) => (
+          {servicos.map((d, index) => (
             <div key={index} className='slide-content'>
               <div className='card-wrapper'>
                 <div className='cards'>
                   <div className='image-content'>
                     <span className='overlay'></span>
                     <div className='card-image'>
-                      <img src={d.img} alt={d.name} className='card-img'></img>
+                      <img src={d.img_servico} alt={d.titulo_servico} className='card-img'></img>
                     </div>
                   </div>
                   <div className='card-content'>
-                    <h2 className='tipo-serviço'>{d.name}</h2>
-                    <p className='descrição'>{d.desc}</p>
+                    <h2 className='tipo-serviço'>{d.titulo_servico}</h2>
+                    <p className='descrição'>{d.desc_servico}</p>
                   </div>
                 </div>
               </div>
