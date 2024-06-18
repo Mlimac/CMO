@@ -1,0 +1,473 @@
+body{
+    margin: 0;
+    padding:0;
+    color: black;
+    font-family: sans-serif;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+html{
+    scroll-behavior: smooth;
+}
+.wrapper{
+    width: 100%;
+    margin: 0 auto;
+}
+
+main{
+    display: block;
+    background-color: white;
+}
+.container-1{
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 20px;
+    font-size: 20px;
+}
+.container-1 h2{
+    text-align: center;
+}
+.container-1 p{
+    text-align: center;
+}
+
+section.module p{
+   margin-bottom: 40px;
+}
+
+section.module :last-child{
+    margin-bottom: 0;
+}
+
+section.module h2{
+    margin-bottom: 40px;
+    font-style: 30px;
+}
+
+section.module.content{
+    background: #fff;
+    border: solid 5px;
+    border-color: rgb(218, 135, 18);
+}
+
+section.module.parallax{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh !important;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+}
+
+section.module.parallax-1:after{
+    content:"";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 8;
+    background: -moz-linear-gradient(to bottom, rgba(0,0,0,0) 0, rgba(0,0,0,0) 40%, #000 100%);
+    background: -webkit-linear-gradient(to bottom, rgba(0,0,0,0) 0, rgba(0,0,0,0) 40%, #000 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0, rgba(0,0,0,0) 40%, #000 100%);
+}
+
+section.module.parallax-1{
+    background-image: url(./images/ferramentas.jpg);
+}
+
+.botao{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: 75px;
+    
+}
+.cadastro {
+    font-size: 25px;
+    border-radius: 15px;
+    background-color: rgba(255, 157, 0, 0.697);
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.cadastro a {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+}
+
+.cadastro:hover {
+    transform: scale(1.1);
+
+}
+.minutos{
+    font-size: 25px;
+    border-radius: 15px;
+    background-color: rgb(218, 135, 18);
+}
+.minutos a{
+    text-decoration: none;
+    color: black;
+}
+.module-parallax-parallax-2{
+   min-height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center; 
+   background-color: rgba(235, 183, 111, 0.275);
+}
+
+
+.slick-slide > div{
+    margin: 0 10px;
+}
+.marcas img{
+    width: 1500px;
+}
+.inner{
+    display: flex;
+}
+
+.serviços{
+    max-width: 1000px;
+}
+
+.slide-content{
+    border: solid;
+    border-radius: 30px;
+    border-color: rgb(218, 135, 18);
+    height: 500px;
+   
+}
+.card{
+    border-radius: 40px;
+    background-color: rgb(231, 220, 243);
+    width: 100px;
+}
+.image-content,
+.card-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 14px;
+    
+}
+
+.image-content{
+    row-gap: 5px;
+    position: relative;
+    border-radius: 25px 25px 0 25px;
+    padding: 25px 0;
+}
+
+.overlay{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(218, 135, 18);
+  border-radius: 25px 25px 0 25px;
+}
+
+.overlay::before,
+.overlay::after{
+     content: '';
+     position: absolute;
+     right: 0;
+     bottom: -80px;
+     height: 80px;
+     width: 20px;
+     background-color:  rgb(218, 135, 18);
+}
+.overlay::after{
+    border-radius: 0 40px 0 0;
+    background-color: white
+}
+
+.card-image{
+    position: relative;
+    text-align: center;
+    height: 200px;
+    width: 240px;
+    border-radius: 40%;
+    padding: 3px;
+}
+
+.card-image .card-img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 40%;
+    border: 4px solid  rgb(231, 220, 243);
+}
+
+.tipo-serviço{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.descriçao{
+    font-size: 14px;
+    text-align: center;
+}
+
+.mais{
+    border: none;
+    font-size: 18px;
+    color: white;
+    padding: 8px 16px;
+    background-color:  rgb(218, 135, 18);
+    border-radius: 6px;
+    margin: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mais:hover{
+    background: black;
+
+}
+
+section.module.parallax-2 h1{
+    color: black;
+
+}
+
+/*inicio css localizacao*/
+
+
+.module-parallax-parallax-3{
+    background-color: rgba(235, 183, 111, 0.275);
+}
+iframe{
+    width:520px;
+    height: 300px;
+    border-radius: 20px;
+    border: solid 3px;
+    
+}
+.local{
+    text-align: center;
+    font-size: 28px;
+    padding-top: 80px;
+    color: orange;
+}
+.mapa{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px;
+    justify-content: space-around;
+    
+}
+
+.reboucas h1{
+   
+    font-size: 25px;
+    color: black;
+    padding-right: 50px;
+}
+
+.reboucas h4{
+    text-align: center;
+    padding-right: 50px;
+
+}
+
+.santa h1{
+  
+    font-size: 25px;
+    color: black;
+}
+
+
+/*fim localização*/
+
+
+.conserto{
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    z-index: 50;
+}
+
+.conserto h4{
+    color:rgb(218, 135, 18);
+}
+
+
+.module-content-1{
+    padding: 20px 0;
+    background-color: rgba(255, 149, 0, 0.275);
+    border: solid 5px;
+    border-color: rgb(218, 135, 18);
+}
+.module-content-1 h4{
+    text-align: center;
+    font-size: 20px;
+}
+.module-parallax-parallax-2{
+    display: flex;
+    justify-content: center;
+    height: 100vh !important;
+    width: 100%;
+    position: relative;
+}
+#servicos h1{
+    margin-top: 120px;
+    text-align: center; 
+    font-size: 30px; 
+}
+
+.module-parallax-parallax-4{
+    padding: 0 10rem 0 10rem;
+    background-color: rgba(235, 183, 111, 0.275);
+
+}
+
+.module-content-4{
+    background-color: black;
+}
+
+.module-parallax-parallax-4 h1{
+    align-items: center;
+    text-align: center;
+    color: black;
+    font-size: 3rem;
+    margin-top: 3rem;
+}
+
+form{
+    height: auto;
+    font-size: 50px;
+    text-align: center;
+    border: solid 5px;
+    border-radius: 20px;
+    
+}
+.botaocad{
+    justify-content:space-evenly;
+}
+.cad{
+    cursor: pointer;
+}
+
+.cad:hover{
+    width: 240px;
+    height: 50px;
+}
+.inputform input{
+    width: 90%;
+    padding: 1.5rem;
+    border-radius: 20px;
+}
+
+form button{
+    margin-top: 2rem;
+    border-radius: 15px;
+    background-color:  rgb(218, 135, 18);;
+    font-size: 30px;    
+}
+
+
+form h3{
+    text-align: center;
+    color: black;
+    font-size: 30px;
+}
+ul{
+    list-style: none;
+}
+ul li{
+    display: inline-block;
+}
+ul li{
+    padding: 0px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    border-radius: 30px;
+    transition: 0.6s;
+}
+
+
+/*marcas atendidas*/
+.tiles-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tile {
+    width: 213.6px; /* tamanho inicial da telha */
+    height: 150px; /* altura inicial da telha */
+    margin: 1px; /* Espaçamento entre as telhas */
+    background-color: rgba(255, 149, 0, 0.275);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; 
+    transition: transform 0.3s ease; /* Transição suave */
+}
+
+.tile:hover {
+    transform: scale(1.06); /* Aumenta em 25% */
+}
+
+.tile img {
+    max-width: 100%; 
+    max-height: 100%;
+    object-fit: contain; 
+}
+
+.tile p {
+    text-align: center;
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+.tile i {
+    font-size: 40px;
+    color: #666;
+}
+
+
+.tile .samsung:before {
+    content: "";
+}
+
+.tile .LG:before {
+    content: ""
+}
+
+.tile .consul:before {
+    content: "";
+}
+
+.tile .brastemp:before {
+    content: "";
+}
+
+.tile .electrolux:before {
+    content: "";
+}
+
+.tile .philco:before {
+    content: "";
+}
+
+.tile .panasonic:before {
+    content: "";
+}
+

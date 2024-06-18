@@ -1,0 +1,43 @@
+.contatos-direita {
+    position: fixed;
+    bottom: 35px;
+    right: 35px;
+    z-index: 9999;
+    display: flex;
+  }
+  
+  .telefone-item,
+  .whatsapp-item {
+    margin-right: 10px;
+  }
+  
+  .telefone-item{
+    margin-top: 12px;
+  }
+  .whatsapp-item:last-child {
+    margin-right: 0;
+  }
+
+  .telefone-item:last-child {
+    margin-right: 0;
+  }
+  
+  .telefone-item img {
+    width: 70px;
+    transition: transform 0.5s ease;
+  }
+
+  .whatsapp-item img {
+    width: 70px;
+    transition: transform 0.5s ease;
+  }
+  
+
+/*icon se destaca*/
+  .whatsapp-item:hover img {
+    transform: scale(1.3);
+  }
+
+  .telefone-item:hover img {
+    transform: scale(1.3);
+  }

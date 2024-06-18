@@ -1,0 +1,180 @@
+.header {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: rgba(0, 0, 0, 0.114);
+  z-index: 100;
+  position: fixed;
+  color: black !important;
+  backdrop-filter: blur(5px);
+}
+
+.mobile-menu {
+  cursor: pointer;
+  display: none;
+}
+
+.mobile-menu div {
+  width: 32px;
+  height: 2px;
+  background: white;
+  margin: 8px;
+}
+
+@media (max-width: 999px) {
+  body {
+    overflow-x: hidden;
+  }
+  .header__lists {
+    position: absolute;
+    top: 13vh;
+    right: 0;
+    width: 50vw;
+    height: 92vh;
+    background: rgb(218, 211, 18);
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateX(100%);
+  }
+  .header__lists li {
+    margin-left: 0;
+    color: black;
+    opacity: 0;
+  }
+  .mobile-menu {
+    display: block;
+  }
+}
+
+.header__lists.active {
+  transform: translateX(0);
+}
+
+.header__left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__left > img {
+  width: 200px;
+  height: 160px;
+  padding: 5px;
+}
+
+.header__left > h2 {
+  font-size: 40px;
+  color: black;
+}
+
+.header__center {
+  display: flex;
+}
+
+.header__center > li {
+  text-decoration: none;
+}
+
+.header__lists {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__lists > li {
+  list-style-type: none;
+  padding: 19px;
+}
+
+.header__lists > li > a {
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 30px;
+  display: inline-block;
+  transition: transform 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  border: 3px solid rgb(0, 0, 0);
+  color: black;
+  background-color: rgba(0, 0, 0, 0.279);
+  padding: 10px 20px;
+}
+
+.header__lists > li > a:hover,
+.header__lists > li > a:focus {
+  color: white;
+  border-color: rgba(64, 64, 64, 1);
+  background-color: rgba(255, 234, 0, 0.107);
+  transform: scale(1.1);
+}
+
+.perfil {
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 30px;
+  display: inline-block;
+  transition: transform 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  border: 3px solid rgb(0, 0, 0);
+  color: black;
+  background-color: rgba(0, 0, 0, 0.279);
+  padding: 10px 20px;
+  right: 35px;
+  height: 23px;
+  width: 23px;
+  transition: transform 0.7s;}
+
+.perfil:hover {
+  transform: scale(1.1);
+  background-color: rgba(255, 234, 0, 0.107);
+}
+
+.icon-perfil {
+  position: fixed;
+  bottom: 35px;
+  left: 35px;
+}
+
+.user {
+  position: relative;
+}
+
+.user-buttons {
+  position: absolute;
+  top: calc(100% + 1px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
+
+.user:hover .user-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-button,
+.signup-button {
+  cursor: pointer;
+  border: 3px solid rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.279);
+  color: black;
+  font-size: 20px;
+  border-radius: 30px;
+  padding: 10px 20px;
+  margin: 1px;
+  transition: transform 0.3s ease, border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+}
+
+.login-button:hover,
+.signup-button:hover {
+  color: white;
+  background-color: rgba(255, 234, 0, 0.107);
+  border-color: rgba(64, 64, 64, 1);
+  transform: scale(1.1);
+}
+
+.logo {
+  width: 150px; /* Defina o tamanho desejado */
+  height: auto; /* Ou defina uma altura específica, se necessário */
+}
