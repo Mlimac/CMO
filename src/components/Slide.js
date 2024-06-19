@@ -43,18 +43,23 @@ const data1 = [
   }
 ];
 
+
 function Slide() {
-  const [servicos, setServicos] = useState([]);
+
+const [servicos, setServicos] = useState([]);
 
   useEffect(() => {
+    
     api.get('/servicos')
        .then((resp) => {
         setServicos(resp.data);
-       })
+        })
+
        .catch((err) => {
         alert('Erro ao carregar servicos');
-       })
+       });
   }, []);
+  
 
   const settings = {
     dots: true,
@@ -63,6 +68,7 @@ function Slide() {
     slidesToScroll: 1,
   };
 
+console.log(servicos + "teste");
   return (
     <div className=''>
       <div className=''>
