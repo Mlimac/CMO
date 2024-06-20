@@ -29,7 +29,7 @@ function Footer() {
           </div>
         </div>
         <div className="copyright">
-          &copy; 2024 Todos os Direitos Reservados - Casa do Microondas
+          &copy; 2024 Todos os Direitos Reservados - Casa do Micro ondas
         </div>
       </div>
     </footer>
