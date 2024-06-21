@@ -1,0 +1,185 @@
+a<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; 
+            position: relative;
+            background-image: url('../Desktop/ferramentas.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            filter: blur(0); 
+            transition: filter 0.3s ease; 
+            z-index: -1; 
+        }
+
+        .blur {
+            filter: blur(5px); 
+        }
+
+        .wrapper {
+            width: 420px;
+            background: rgba(0, 0, 0, 0.5); 
+            color: white;
+            border-radius: 10px;
+            padding: 30px 40px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.7); 
+            position: relative;
+            z-index: 1; 
+            text-align: center;
+        }
+
+        .wrapper h1 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 20px; 
+        }
+
+        .input-box {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-box input {
+            width: 100%;
+            height: 50px;
+            background-color: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.597);
+            border-radius: 40px;
+            font-size: 16px;
+            color: #ffffff5c;
+            padding: 0 20px;
+            outline: none;
+            transition: border-color 0.3s, transform 0.3s; 
+        }
+
+        .input-box input:focus {
+            border-color: #ffffff; 
+            transform: scale(1.05); 
+        }
+
+        .input-box input::placeholder {
+            color: white;
+        }
+
+        .input-box i {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            color: white;
+        }
+
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14.5px;
+            margin-bottom: 15px;
+        }
+
+        .remember-forgot a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .remember-forgot a:hover {
+            text-decoration: underline;
+        }
+
+        .btn {
+            width: 100%;
+            height: 45px;
+            background: #ffffff53;
+            border: none;
+            outline: none;
+            border-radius: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+            cursor: pointer;
+            font-size: 16px;
+            color: #000000;
+            font-weight: 600;
+            margin-top: 10px; 
+        }
+
+        .register-link {
+            font-size: 14.5px;
+            text-align: center;
+            margin-top: 20px; 
+        }
+
+        .register-link a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="background blur"></div> 
+
+<div class="wrapper">
+    <h1>Cadastro</h1>
+    <div class="input-box">
+        <input type="text" placeholder="Nome" required>
+    </div>
+    <div class="input-box">
+        <input type="text" placeholder="Email" required>
+    </div>
+    <div class="input-box">
+        <input type="password" placeholder="Senha" required>
+    </div>
+    <div class="input-box">
+        <input type="password" placeholder="Confirmar Senha" required>
+    </div>
+    <button type="submit" class="btn">Cadastro</button>
+    <div class="register-link">
+        <p>Já possui uma conta? <a href="#">Login</a></p>
+    </div>
+</div>
+
+<script>
+    const wrapper = document.querySelector('.wrapper');
+    const background = document.querySelector('.background');
+
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        background.classList.add('blur');
+    });
+
+    
+    wrapper.addEventListener('click', function() {
+        background.classList.toggle('blur');
+    });
+</script>
+
+</body>
+</html>
