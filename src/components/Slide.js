@@ -45,56 +45,61 @@ const data1 = [
 
 
 function Slide() {
-
-const [servicos, setServicos] = useState([]);
+  const [servicos, setServicos] = useState([]);
 
   useEffect(() => {
-    
-    api.get('/servicos')
-       .then((resp) => {
-        setServicos(resp.data);
-        })
+    async function fetchData() {
+      try {
+        const { data } = await api.get('/servicos');
+        setServicos(data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
 
-       .catch((err) => {
-        alert('Erro ao carregar servicos');
-       });
+    fetchData();
   }, []);
-  
 
-  const settings = {
-    dots: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-  };
+  if (servicos.length > 0) {
+    console.log(servicos);
+    
+    const settings = {
+      dots: true,
+      speed: 500,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+    };
 
-console.log(servicos + "teste");
-  return (
-    <div className=''>
+    return (
       <div className=''>
-        <Slider {...settings}>
-          {servicos.map((d, index) => (
-            <div key={index} className='slide-content'>
-              <div className='card-wrapper'>
-                <div className='cards'>
-                  <div className='image-content'>
-                    <span className='overlay'></span>
-                    <div className='card-image'>
-                      <img src={d.img_servico} alt={d.titulo_servico} className='card-img'></img>
+        <div className=''>
+          <Slider {...settings}>
+            {servicos.map((d, index) => (
+              <div key={index} className='slide-content'>
+                <div className='card-wrapper'>
+                  <div className='cards'>
+                    <div className='image-content'>
+                      <span className='overlay'></span>
+                      <div className='card-image'>
+                        <img src={d.img_servico} alt={d.titulo_servico} className='card-img'></img>
+                      </div>
                     </div>
-                  </div>
-                  <div className='card-content'>
-                    <h2 className='tipo-serviço'>{d.titulo_servico}</h2>
-                    <p className='descrição'>{d.desc_servico}</p>
+                    <div className='card-content'>
+                      <h2 className='tipo-serviço'>{d.titulo_servico}</h2>
+                      <p className='descrição'>{d.desc_servico}</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </Slider>
+            ))}
+          </Slider>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
+
+  
+  
 }
 
 export default Slide;
