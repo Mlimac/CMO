@@ -3,6 +3,7 @@ import './styles/Header.css'; // Importe o arquivo de estilo CSS
 
 import logo from './styles/images/logocmo.png';
 import user from './styles/images/Usuario.png';
+import { Link } from 'react-router-dom';
 
 class MobileNavbar {
   constructor(mobileMenu, navList, navLinks) {
@@ -54,7 +55,7 @@ function Header() {
     <nav>
       <div className="header">
         <div className="header__left">
-          <img className="logo" src={logo} alt="logo"/>
+         <Link to="/"> <img className="logo" src={logo} alt="logo"/></Link>
           <h2>Casa do Microondas</h2>
         </div>
         <div className="mobile-menu">
@@ -82,8 +83,8 @@ function Header() {
             
             {buttonsVisible && (
               <div className="user-buttons">
-                <button className="login-button">Login</button>
-                <button className="signup-button">Cadastro</button>
+               <Link to='/login'> <button className="login-button">Login</button></Link>
+               <Link to='/cadastro'> <button className="signup-button">Cadastro</button></Link>
               </div>
             )}
           </div>
