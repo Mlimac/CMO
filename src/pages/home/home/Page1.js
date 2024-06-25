@@ -11,6 +11,7 @@ import PN from '../../../components/assets/images/PN.png';
 import Header from '../../../components/Header.js';
 import Contato from '../../../components/contato.js';
 import Footer from '../../../components/Footer.js';
+import { Link } from 'react-router-dom';
 
 
 
@@ -33,7 +34,7 @@ function Page1(){
                  <h3>Consertamos seu aparelho em 30 minutos</h3>
                  <h4>(041) 98516-3600</h4>
                  <div className='botao'>
-                 <button className='cadastro'><a href='#login'>Como podemos ajudar?</a></button>
+                <Link to="/form"> <button className='cadastro'>Como podemos ajudar?</button></Link>
                  </div>
                  </div>    
                 </section>
