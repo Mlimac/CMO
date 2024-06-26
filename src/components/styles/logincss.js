@@ -53,4 +53,5 @@ export const Fundo = styled.div`
   z-index: 1;
   text-align: center;
   backdrop-filter: blur(10px);
+  
 `;
