@@ -345,14 +345,6 @@ iframe{
     margin-top: 3rem;
 }
 
-form{
-    height: auto;
-    font-size: 50px;
-    text-align: center;
-    border: solid 5px;
-    border-radius: 20px;
-    
-}
 .botaocad{
     justify-content:space-evenly;
 }
