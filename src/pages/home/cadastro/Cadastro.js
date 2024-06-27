@@ -21,6 +21,7 @@ const Background = styled.div`
 `;
 
 function Cadastro() {
+    
     return (
         <>
         <Header/>

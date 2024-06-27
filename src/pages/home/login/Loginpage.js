@@ -1,7 +1,10 @@
 import React from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
+import api from '../../../api/api';
+
 import { Button, InputBox, Fundo } from '../../../components/styles/logincss';
 import ferramentasImage from '../../../components/styles/images/ferramentas.jpg'; // Importar a imagem diretamente
 
@@ -18,31 +21,83 @@ const Background = styled.div`
   background-repeat: no-repeat;
 `;
 
+
+
 function Login() {
-  return (
-    <>
-      <Header />
-      <Background backgroundImage={ferramentasImage}>
-        <Fundo>
-          <h1>Login</h1>
-          <form>
-            <InputBox>
-              <div className="input-box2">
-                <input type="text" placeholder="Email" required />
-              </div>
-            </InputBox>
-            <InputBox>
-              <div className="input-box2">
-                <input type="password" placeholder="Senha" required />
-              </div>
-              <Button>Login</Button>
-            </InputBox>
-          </form>
-        </Fundo>
-      </Background>
-      <Footer />
-    </>
-  );
+
+
+  const [renderizar, setRenderizar] = useState(false);
+
+  
+    //verifica se já está logado e se o token já expirou
+    useEffect(() => {
+
+      if(sessionStorage.getItem('token').length > 0){
+        api.get('/verificarLogin', { headers: {"x-access-token" : sessionStorage.getItem("token")} })
+        .then((response) => {window.location.href = "/Admin"})
+        .catch((error) => {
+           sessionStorage.setItem('token', '')
+           setRenderizar(true)
+           });
+      }
+      else{
+        setRenderizar(true);
+      }
+        
+    }, []);
+  
+
+  if(renderizar){
+
+    async function logar(){
+
+      let Email = document.getElementById("email").value;
+      let Senha = document.getElementById("password").value;
+    
+          try {
+            const { data } = await api.post('/login', new URLSearchParams("usuario=" + Email + "&senha=" + Senha));
+            if(data.autenticado){
+              sessionStorage.setItem('token', data.token);
+              window.location.href = "/Admin";
+            }
+            
+          } catch (error) {
+            alert(error.response.data);
+          }
+        
+    
+        
+    }
+  
+    return (
+      <>
+        <Header />
+        <Background backgroundImage={ferramentasImage}>
+          <Fundo>
+            <h1>Login</h1>
+            <form>
+              <InputBox>
+                <div className="input-box2">
+                  <input id="email" type="text" placeholder="Email" required />
+                </div>
+              </InputBox>
+              <InputBox>
+                <div className="input-box2">
+                  <input id="password" type="password" placeholder="Senha" required />
+                </div>
+                
+              </InputBox>
+            </form>
+            <Button onClick={logar}>Login</Button>
+          </Fundo>
+        </Background>
+        <Footer />
+      </>
+    );
+
+  }
+
+  
 }
 
 export default Login;

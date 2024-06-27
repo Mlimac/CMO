@@ -66,13 +66,13 @@ function Header() {
         <div className="header__center">
           <ul className="header__lists">
             <li>
-              <a href="#home" style={{ scrollBehavior: 'smooth' }}>Home</a>
+              <a href="/#home" style={{ scrollBehavior: 'smooth' }}>Home</a>
             </li>
             <li>
-              <a href="#servicos" style={{ scrollBehavior: 'smooth' }}>Serviços</a>
+              <a href="/#servicos" style={{ scrollBehavior: 'smooth' }}>Serviços</a>
             </li>
             <li>
-              <a href="#localizacao" style={{ scrollBehavior: 'smooth' }}>Localização</a>
+              <a href="/#localizacao" style={{ scrollBehavior: 'smooth' }}>Localização</a>
             </li>
           </ul>
         </div>
