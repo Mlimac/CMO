@@ -1,10 +1,11 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
+
 import styled from 'styled-components';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
-import api from '../../../api/api';
 
+import api from '../../../api/api';
 import { Button, InputBox, Fundo } from '../../../components/styles/logincss';
 import ferramentasImage from '../../../components/styles/images/ferramentas.jpg'; // Importar a imagem diretamente
 
@@ -34,7 +35,7 @@ function Login() {
 
       if(sessionStorage.getItem('token').length > 0){
         api.get('/verificarLogin', { headers: {"x-access-token" : sessionStorage.getItem("token")} })
-        .then((response) => {window.location.href = "/Admin"})
+        .then((response) => {if(response.data.st === "ok") {window.location.href = "/Admin";}})
         .catch((error) => {
            sessionStorage.setItem('token', '')
            setRenderizar(true)
