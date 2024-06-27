@@ -398,7 +398,7 @@ ul li{
 }
 
 .tile {
-    width: 213.6px; /* tamanho inicial da telha */
+    width: 14.17%; /* tamanho inicial da telha */
     height: 150px; /* altura inicial da telha */
     margin: 1px; /* Espaçamento entre as telhas */
     background-color: rgba(255, 149, 0, 0.275);

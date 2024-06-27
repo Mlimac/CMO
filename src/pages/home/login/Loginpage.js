@@ -33,7 +33,7 @@ function Login() {
     //verifica se já está logado e se o token já expirou
     useEffect(() => {
 
-      if(sessionStorage.getItem('token').length > 0){
+      if("token" in sessionStorage ? sessionStorage.getItem('token').length > 0 : false){
         api.get('/verificarLogin', { headers: {"x-access-token" : sessionStorage.getItem("token")} })
         .then((response) => {if(response.data.st === "ok") {window.location.href = "/Admin";}})
         .catch((error) => {

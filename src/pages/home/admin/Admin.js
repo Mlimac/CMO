@@ -9,16 +9,22 @@ import { Link } from 'react-router-dom';
 
 
 function Admin() {
-    return (
-       <>
-
-       <Header />
-       
-       <Footer />
-       
-       </> 
-
-    );
+    if("token" in sessionStorage ? sessionStorage.getItem('token').length > 0 : false){
+        return (
+            <>
+     
+            <Header />
+            
+            <Footer />
+            
+            </> 
+     
+         );
+    }
+    else{
+        window.location.href = "/";
+    }
+    
 }
 
 export default Admin;
