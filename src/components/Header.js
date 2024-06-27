@@ -98,7 +98,10 @@ function Header() {
                     ("token" in sessionStorage ? sessionStorage.getItem('token').length > 0 : false) ? 
                       
                       (
+                        <>
+                        <Link to='/admin'> <button className="botoes-menu">Admin</button></Link>
                         <button className="botoes-menu" onClick={Deslogar}>Deslogar</button>
+                        </>
                       ) :  
                       
                       (  
