@@ -51,6 +51,16 @@ function Header() {
     return () => clearTimeout(timer);
   }, [buttonsVisible]);
 
+
+  function Deslogar(){
+
+    sessionStorage.setItem('token', '');
+    window.location.href = "/";
+
+  }
+
+
+
   return (
     <nav>
       <div className="header">
@@ -83,8 +93,20 @@ function Header() {
             
             {buttonsVisible && (
               <div className="user-buttons">
-               <Link to='/login'> <button className="login-button">Login</button></Link>
-               <Link to='/cadastro'> <button className="signup-button">Cadastro</button></Link>
+                {
+                  (
+                    ("token" in sessionStorage ? sessionStorage.getItem('token').length > 0 : false) ? 
+                      
+                      (
+                        <button className="botoes-menu" onClick={Deslogar}>Deslogar</button>
+                      ) :  
+                      
+                      (  
+                        <Link to='/login'> <button className="botoes-menu">Login</button></Link>
+                      ) 
+                  )     
+              }
+               <Link to='/cadastro'> <button className="botoes-menu">Cadastro</button></Link>
               </div>
             )}
           </div>
