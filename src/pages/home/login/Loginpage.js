@@ -72,7 +72,7 @@ function Login() {
   
     return (
       <>
-        <Header />
+        <Header position={"fixed"}/>
         <Background backgroundImage={ferramentasImage}>
           <Fundo>
             <h1>Login</h1>

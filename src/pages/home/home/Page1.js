@@ -23,7 +23,7 @@ function Page1(){
     
     return (
         <>
-        <Header/>
+        <Header position={"fixed"}/>
         <Contato/>
         <div className='wrapper'>
             <main>

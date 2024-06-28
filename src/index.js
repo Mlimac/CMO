@@ -9,6 +9,7 @@ import ErrorPage from './pages/home/error/error';
 import Cadastro from './pages/home/cadastro/Cadastro';
 import Form from './pages/home/form/form';
 import FormularioProblema from './pages/home/form/form';
+import AdmServico from './pages/home/admin/AdmServico';
 
 //Componetização
 
@@ -32,6 +33,10 @@ import FormularioProblema from './pages/home/form/form';
 {   
     path:"admin",
     element:<Admin/>,
+    },
+{   
+    path:"admservico",
+    element:<AdmServico/>,
     }
 
 ])

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './styles/Header.css'; // Importe o arquivo de estilo CSS
+import styles from './styles/Header.css'; // Importe o arquivo de estilo CSS
 
 import logo from './styles/images/logocmo.png';
 import user from './styles/images/Usuario.png';
@@ -36,7 +36,7 @@ class MobileNavbar {
 const mobileNavbar = new MobileNavbar('.mobile-menu', '.nav-list', '.nav-list li');
 mobileNavbar.init();
 
-function Header() {
+function Header({position}) {
   const [buttonsVisible, setButtonsVisible] = useState(false);
 
   const toggleButtons = () => {
@@ -62,8 +62,11 @@ function Header() {
 
 
   return (
+   
+   
+
     <nav>
-      <div className="header">
+      <div className="header" style={{"--position" : position}}>
         <div className="header__left">
          <Link to="/"> <img className="logo" src={logo} alt="logo"/></Link>
           <h2>Casa do Microondas</h2>
@@ -76,7 +79,7 @@ function Header() {
         <div className="header__center">
           <ul className="header__lists">
             <li>
-              <a href="/#home" style={{ scrollBehavior: 'smooth' }}>Home</a>
+              <a href="/#home" style={{ scrollBehavior: 'smooth' }}>Início</a>
             </li>
             <li>
               <a href="/#servicos" style={{ scrollBehavior: 'smooth' }}>Serviços</a>

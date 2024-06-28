@@ -20,7 +20,7 @@ const FormularioProblema = () => {
 
   return (
     <>
-    <Header/>
+    <Header position={"fixed"}/>
     <form onSubmit={handleSubmit}>
       <div>
         <label>Nome:</label>

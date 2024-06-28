@@ -13,7 +13,7 @@ function Admin() {
         return (
             <>
      
-            <Header />
+            <Header position={"relative"}/>
             
             <Footer />
             
