@@ -1,6 +1,8 @@
 import axios from 'axios';
 import Header from "../../../components/Header";
 import Footer from '../../../components/Footer';
+import {useState, useEffect} from "react";
+import icone_editar from  "../../../components/assets/images/editar.png";
 
 const URL_Servidor = "http://localhost:5000";
 const api = axios.create({
@@ -9,7 +11,29 @@ const api = axios.create({
 
 
 
+
 function AdmServico(){
+
+
+const [servicos, setServicos] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const { data } = await api.get('/servicos');
+        setServicos(data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    fetchData();
+  }, []);
+
+  if (servicos.length > 0) {
+    console.log(servicos);
+    
+
 
     return(
         <>
@@ -19,37 +43,19 @@ function AdmServico(){
             <center>
                 <table>
                 <caption>
-                <strong>Serviços:</strong>
+                <h1>Serviços:</h1>
             </caption>
-                <thead>
-                    <tr>
-                    <th scope="col">Nome</th>
-                    <th scope="col">ID</th>
-                    
-                    </tr>
-                </thead>
+            <br/>
+
                 <tbody>
-                    <tr>
-                    <th scope="row">Chris</th>
-                    <td>HTML tables</td>
+                    {servicos.map((d, index) => (
+                       <> <tr>
+                        <th scope="row" style={{"font-weight":"normal"}}>{d.titulo_servico}</th>
+                        <td><a href="."> <img src={icone_editar} height="20px;"></img></a></td>
+                        
+                        </tr><br/></>
+                    ))}
                     
-                    
-                    </tr>
-                    <tr>
-                    <th scope="row">Dennis</th>
-                    <td>Web accessibility</td>
-                    
-                    </tr>
-                    <tr>
-                    <th scope="row">Sarah</th>
-                    <td>JavaScript frameworks</td>
-                
-                    </tr>
-                    <tr>
-                    <th scope="row">Karen</th>
-                    <td>Web performance</td>
-                    
-                    </tr>
                 </tbody>
                 
                 </table>
@@ -59,7 +65,7 @@ function AdmServico(){
     
         </>
     
-    )
+    )}
 
 
 }

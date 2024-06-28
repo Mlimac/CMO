@@ -15,6 +15,8 @@ function Admin() {
      
             <Header position={"relative"}/>
             
+            <center><br/><br/><a href="/AdmServico">Acessar Servicos</a></center><br/><br/>
+
             <Footer />
             
             </> 
