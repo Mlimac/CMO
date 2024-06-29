@@ -10,6 +10,7 @@ import Cadastro from './pages/home/cadastro/Cadastro';
 import Form from './pages/home/form/form';
 import FormularioProblema from './pages/home/form/form';
 import AdmServico from './pages/home/admin/AdmServico';
+import EditarServicos from './pages/home/admin/EditarServicos';
 
 //Componetização
 
@@ -37,6 +38,10 @@ import AdmServico from './pages/home/admin/AdmServico';
 {   
     path:"admservico",
     element:<AdmServico/>,
+    },
+{   
+    path:"editarservicos",
+    element:<EditarServicos/>,
     }
 
 ])

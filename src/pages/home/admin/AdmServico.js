@@ -30,6 +30,8 @@ const [servicos, setServicos] = useState([]);
     fetchData();
   }, []);
 
+ 
+
   if (servicos.length > 0) {
     console.log(servicos);
     
@@ -51,7 +53,7 @@ const [servicos, setServicos] = useState([]);
                     {servicos.map((d, index) => (
                        <> <tr>
                         <th scope="row" style={{"font-weight":"normal"}}>{d.titulo_servico}</th>
-                        <td><a href="."> <img src={icone_editar} height="20px;"></img></a></td>
+                        <td><a href={"/EditarServicos"}> <img src={icone_editar} height="20px;"></img></a></td>
                         
                         </tr><br/></>
                     ))}
