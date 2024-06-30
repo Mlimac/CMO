@@ -16,12 +16,17 @@ function EditarServicos(){
 
     const postServicos = async () => {
       try {
-        const { data } = await api.post('/servicos', {});
+
+        let titulo = document.getElementById("titulo").value;
+        let descricao = document.getElementById("descricao").value;
+        let url_imagem = document.getElementById("url_imagem").value;
+        let ativo = (document.getElementById("ativo").checked ? 1 : 0);
+        let ordem = document.getElementById("ordem").value;
         
-        //alert("Serviço editado com sucesso")
+        const { data } = await api.post('/servicos', new URLSearchParams("titulo=" + titulo + "&desc=" + descricao + "&url_imagem=" + url_imagem + "&ativo=" + ativo + "&ordem=" + ordem));
+        alert("Serviço editado com sucesso");
       } catch (error) {
-        console.log(error);
-        alert(error.data);
+        alert(error);
       }
     }
 
@@ -56,9 +61,13 @@ function EditarServicos(){
                     <center>
                         <br/><b>Serviços</b><br/><br/>
                         <b>Titulo: </b><input type="text" id="titulo" defaultValue={servicos[0].titulo_servico}></input><br/><br/>
-                        <b>Descrição: <br/></b><textarea style={{"width": "600px", "height": "200px"}} defaultValue={servicos[0].titulo_servico}></textarea><br/>
-                        <b>URL Imagem: </b><input type="text" defaultValue={servicos[0].url_servico}></input><br/><br/>
-                        <button onClick={postServicos}>Atualizar</button>
+                        <b>Descrição: <br/></b><textarea id="descricao" style={{"width": "600px", "height": "200px"}} defaultValue={servicos[0].desc_servico}></textarea><br/>
+                        <b>URL Imagem: </b><input id="url_imagem" type="text" defaultValue={servicos[0].url_servico}></input><br/>
+                        <br></br><input type="checkbox" id="ativo" name="ativo" value="Ativo" />
+                        <label for="ativo"> Ativo </label><br/><br/>
+                        <b>Ordem: </b><input id="ordem" type="text" defaultValue={servicos[0].ordem}></input><br/><br/>
+                        <button onClick={postServicos}>Atualizar</button><br/>
+                        
                     </center>
                 <Footer/>
 
