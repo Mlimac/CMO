@@ -135,7 +135,7 @@ function Header({position}) {
                         (
                           <>
                           <Link to='/admin'> <button className="botoes-menu">Admin</button></Link>
-                          <button className="botoes-menu" onClick={Deslogar}>Deslogar</button>
+                          <button className="botoes-menu" onClick={Deslogar}>Sair</button>
                           </>
                         ) :  
                         

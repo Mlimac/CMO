@@ -11,6 +11,9 @@ import FormularioProblema from './pages/home/form/form';
 import AdmServico from './pages/home/admin/AdmServico';
 import EditarServicos from './pages/home/admin/EditarServicos';
 import CriarServico from './pages/home/admin/CriarServico';
+import AdmFilial from './pages/home/admin/AdmFilial';
+import CriarFilial from './pages/home/admin/CriarFilial';
+import EditarFilial from './pages/home/admin/EditarFilial';
 
 //Componetização
 
@@ -44,6 +47,18 @@ import CriarServico from './pages/home/admin/CriarServico';
 {   
     path:"CriarServico",
     element:<CriarServico/>,
+    },
+{   
+    path:"AdmFilial",
+    element:<AdmFilial/>,
+    },
+{   
+    path:"CriarFilial",
+    element:<CriarFilial/>,
+    },
+{   
+    path:"EditarFilial",
+    element:<EditarFilial/>,
     }
 
 ])

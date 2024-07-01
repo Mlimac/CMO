@@ -13,10 +13,10 @@ const api = axios.create({
 
 
 
-function AdmServico(){
+function AdmFilial(){
 
 
-const [servicos, setServicos] = useState([]);
+const [filiais, setFiliais] = useState([]);
 
 
   useEffect(() => {
@@ -24,8 +24,8 @@ const [servicos, setServicos] = useState([]);
       if("token" in sessionStorage ? sessionStorage.getItem('token').length > 0 : false){
         try {
           
-            const { data } = await api.get('/admServicos', {headers: {"x-access-token" : sessionStorage.getItem("token")}});
-            setServicos(data);
+            const { data } = await api.get('/filiais', {headers: {"x-access-token" : sessionStorage.getItem("token")}});
+            setFiliais(data);
           
         }
         catch (error) {
@@ -51,27 +51,28 @@ const [servicos, setServicos] = useState([]);
     }
       //<td> <a href="javascript:void(0)" onClick={() => deleteServico(d.id_servico)}><img src={icone_lixo}  height="20px;"/></a></td>
   }*/
- 
+
+
     return(
         <>
     
             <Header position={"relative"}/>
                 
             <center>
-                <br/><button onClick={() => {window.location.href="/CriarServico"}}>Criar Serviço</button>
+                <br/><button onClick={() => {window.location.href="/CriarFilial"}}>Criar Filial</button>
                 <table>
                 <caption>
-                <h1>Serviços:</h1>
+                <h1>Filiais:</h1>
             </caption>
             <br/>
 
                 <tbody>
                 
-                  {servicos.map((d, index) => (
+                  {filiais.map((d, index) => (
                       <> <tr>
                       
-                      <th scope="row" style={{"font-weight":"normal"}}>{d.titulo_servico}</th>
-                      <td><a href={"/EditarServicos?id=" + d.id_servico}> <img src={icone_editar} height="20px;"/></a></td>
+                      <th scope="row" style={{"font-weight":"normal"}}>{d.nome}</th>
+                      <td><a href={"/EditarFilial?id=" + d.id_filial}> <img src={icone_editar} height="20px;"/></a></td>
                       
                       </tr><br/></>
                   ))}
@@ -91,4 +92,4 @@ const [servicos, setServicos] = useState([]);
 }
 
 
-export default AdmServico
+export default AdmFilial
