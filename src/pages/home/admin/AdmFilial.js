@@ -71,7 +71,7 @@ const [filiais, setFiliais] = useState([]);
                   {filiais.map((d, index) => (
                       <> <tr>
                       
-                      <th scope="row" style={{"font-weight":"normal"}}>{d.nome}</th>
+                      <th scope="row" style={{"font-weight":"normal"}}>{d.nome_filial}</th>
                       <td><a href={"/EditarFilial?id=" + d.id_filial}> <img src={icone_editar} height="20px;"/></a></td>
                       
                       </tr><br/></>

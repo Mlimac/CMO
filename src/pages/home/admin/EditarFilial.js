@@ -27,8 +27,8 @@ function EditarFilial(){
                 let idFilial = document.getElementById("id").value;
 
                 let url = new URL(window.location.href);    
-                idFilial = url.searchParams.get("id");
-                const { data } = await api.put('/filiais', new URLSearchParams("nome=" + nome + "&bairro=" + bairro + "&endereco=" + endereco + "&ativo=" + ativo + "&url=" + url_mapa + "&id=" + idFilial), {headers: {"x-access-token" : sessionStorage.getItem("token")}} );
+                id = url.searchParams.get("id");
+                const { data } = await api.put('/filiais'+id, new URLSearchParams("nome=" + nome + "&bairro=" + bairro + "&endereco=" + endereco + "&ativo=" + ativo + "&url=" + url_mapa + "&id=" + idFilial), {headers: {"x-access-token" : sessionStorage.getItem("token")}} );
                 alert("Filial atualizada com sucesso");
             } catch (error) {
                 alert(error.response.data);
@@ -73,11 +73,10 @@ function EditarFilial(){
                 <Header position={"relative"}/>
                     <center>
                         <br/><b>Filial</b><br/><br/>
-                        <b>Nome: </b><input type="text" id="nome"></input><br/><br/>
-                        <b>Bairro: </b><input type="text" id="bairro"></input><br/><br/>
-                        <b>Endereço: </b><input id="endereco" type="text"></input><br/><br/>
-                        <b>URL Mapa: </b><input id="url_mapa" type="text"></input><br/><br/>
-                        <b>Ordem: </b><input id="ordem" type="text"></input><br/>
+                        <b>Nome: </b><input type="text" id="nome" defaultValue={filiais[0].nome_filial}></input><br/><br/>
+                        <b>Bairro: </b><input type="text" id="bairro" defaultValue={filiais[0].bairro}></input><br/><br/>
+                        <b>Endereço: </b><input id="endereco" type="text" defaultValue={filiais[0].endereco}></input><br/><br/>
+                        <b>URL Mapa: </b><input id="url_mapa" type="text" defaultValue={filiais[0].url_mapa}></input><br/><br/>
                         {
                             filiais[0].ativo === 1 ? (
                                 <>
@@ -92,8 +91,8 @@ function EditarFilial(){
                                 </>
                             )
                         }
-                        <b>Id: </b><input id="id" type="text"></input><br/><br/>
-                        <button onClick={putFiliais}>Criar</button><br/>
+                        <b>Id: </b><input id="id" type="text" defaultValue={filiais[0].id_filial}></input><br/><br/>
+                        <button onClick={putFiliais}>Atualizar</button><br/>
                     </center>
                 <Footer/>
 
