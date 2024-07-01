@@ -11,6 +11,7 @@ import Form from './pages/home/form/form';
 import FormularioProblema from './pages/home/form/form';
 import AdmServico from './pages/home/admin/AdmServico';
 import EditarServicos from './pages/home/admin/EditarServicos';
+import CriarServico from './pages/home/admin/CriarServico';
 
 //Componetização
 
@@ -42,6 +43,11 @@ import EditarServicos from './pages/home/admin/EditarServicos';
 {   
     path:"editarservicos",
     element:<EditarServicos/>,
+    },
+
+{   
+    path:"CriarServico",
+    element:<CriarServico/>,
     }
 
 ])
