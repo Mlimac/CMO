@@ -6,7 +6,6 @@ import Admin from './pages/home/admin/Admin'
 import { BrowserRouter, RouterProvider, createBrowserRouter} from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 import ErrorPage from './pages/home/error/error';
-import Cadastro from './pages/home/cadastro/Cadastro';
 import Form from './pages/home/form/form';
 import FormularioProblema from './pages/home/form/form';
 import AdmServico from './pages/home/admin/AdmServico';
@@ -24,10 +23,7 @@ import CriarServico from './pages/home/admin/CriarServico';
      path:"login",
      element:<Login/>,
      },
- {
-     path:"cadastro",
-     element:<Cadastro/>,
-     },
+
  {
      path:"form",
      element:<FormularioProblema/>,
