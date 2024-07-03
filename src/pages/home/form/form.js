@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
+import styled from 'styled-components'; 
+import { Button, InputBox, Fundo } from '../../../components/styles/logincss';
+import ferramentasImage from '../../../components/styles/images/ferramentas.jpg'; // Importar a imagem diretamente
+
 
 const FormularioProblema = () => {
   const [nome, setNome] = useState('');
@@ -17,10 +21,24 @@ const FormularioProblema = () => {
     setEmail('');
     setAssunto('');
   };
-
+  const Background = styled.div`
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  background-image: url(${props => props.backgroundImage}); // Usar a prop para definir a imagem de fundo
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+`;
   return (
     <>
-    <Header position={"relative"}/>
+    <Header/>
+    <Background backgroundImage={ferramentasImage}>
+    <Fundo>
+      <h1>Contate-nos!</h1>
     <form onSubmit={handleSubmit}>
       <div>
         <label>Nome:</label>
@@ -50,6 +68,8 @@ const FormularioProblema = () => {
       </div>
       <button type="submit">Enviar</button>
     </form>
+     </Fundo>
+     </Background>
     <Footer/>
     </>
   );

@@ -41,10 +41,12 @@ function Page1(){
             </section>
 
             <section id='servicos'>
+         
                 <section className='module-parallax-parallax-2'>
                 
                  <div className='serviços'>
                 <div className='slide-container'>
+                    
                <Slide/>
                   </div>
                   </div>

@@ -18,7 +18,7 @@ function Contato() {
 
    {/*Icon Whatsapp*/}  
   <div className='whatsapp-item'>
-    <a href="https://wa.me//5541985163602?text=Olá tudo bem? Tenho interesse em fazer um orçamento.">
+    <a href="https://wa.me//5541985163602?text=Olá tudo bem? Tenho interesse em fazer um orçamento." target="_blank">
         <img src={whats} alt='WhatsApp' />
     </a>
   </div>

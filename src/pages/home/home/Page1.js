@@ -35,6 +35,7 @@ function Page1(){
                  <h4>(041) 98516-3600</h4>
                  <div className='botao'>
                 <Link to="/form"> <button className='cadastro'>Como podemos ajudar?</button></Link>
+                <Link to="/30min"> <button className='cadastro'>Conserto em 30 Min</button></Link>
                  </div>
                  </div>    
                 </section>
@@ -42,7 +43,7 @@ function Page1(){
             <section className='module-content-1'>
                     <div className='container-1'>
                         <h4>Contate-nos, buscamos e entregamos seu aparelho. Muito obrigado pela sua visita!</h4>
-                        <p>Devido a Pandemia do COVID-19 estamos atendendo das 08:30h as 17:30h, e a avaliação na hora é feita até as 16h.</p>
+                       
                     </div>
             </section>
 

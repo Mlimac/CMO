@@ -15,13 +15,13 @@ function Footer() {
           <div className='contatos'>
             <div className='contatos-esquerda'>
               <div className='contato-item'>
-                <a href="https://www.facebook.com/felipe.dolberth/">
+                <a href="https://www.facebook.com/share/PgzXh53QWCZQugPC/?mibextid=LQQJ4d">
                   <img src={facebook} alt='Facebook' />
                 </a>
               </div>
               
               <div className='contato-item'>
-                <a href="https://www.instagram.com/eu.lipehenr/">
+                <a href="https://www.instagram.com/casadomicroondascwb?igsh=bWtrd3Y5Y2tibG5l">
                   <img src={instagram} alt='Instagram' />
                 </a>
               </div>

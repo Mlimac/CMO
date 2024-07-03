@@ -14,6 +14,7 @@ import CriarServico from './pages/home/admin/CriarServico';
 import AdmFilial from './pages/home/admin/AdmFilial';
 import CriarFilial from './pages/home/admin/CriarFilial';
 import EditarFilial from './pages/home/admin/EditarFilial';
+import Minutos from "./pages/home/30min"
 
 //Componetização
 
@@ -59,7 +60,13 @@ import EditarFilial from './pages/home/admin/EditarFilial';
 {   
     path:"EditarFilial",
     element:<EditarFilial/>,
-    }
+    },
+    ,
+{   
+    path:"30min",
+    element:<Minutos/>,
+    },
+    
 
 ])
 

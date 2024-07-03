@@ -400,7 +400,7 @@ ul li{
 .tile {
     width: 14.17%; /* tamanho inicial da telha */
     height: 150px; /* altura inicial da telha */
-    margin: 1px; /* Espaçamento entre as telhas */
+    margin: 0.79px; /* Espaçamento entre as telhas */
     background-color: rgba(255, 149, 0, 0.275);
     display: flex;
     align-items: center;

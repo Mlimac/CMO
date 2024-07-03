@@ -1,11 +1,27 @@
 import axios from 'axios';
 import Header from "../../../components/Header";
 import Footer from '../../../components/Footer';
+import { Button, InputBox, Fundo } from '../../../components/styles/logincss';
+import ferramentasImage from '../../../components/styles/images/ferramentas.jpg';
+import styled from 'styled-components';
+
 
 const URL_Servidor = "http://localhost:5000";
 const api = axios.create({
    baseURL: URL_Servidor
-})
+});
+const Background = styled.div`
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  background-image: url(${props => props.backgroundImage}); // Usar a prop para definir a imagem de fundo
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+`;
 
 
 
@@ -42,6 +58,8 @@ function CriarFilial(){
             <>
 
                 <Header position={"relative"}/>
+                <Background backgroundImage={ferramentasImage}>
+                  <Fundo>
                     <center>
                         <br/><b>Filial</b><br/><br/>
                         <b>Nome: </b><input type="text" id="nome"></input><br/><br/>
@@ -54,6 +72,8 @@ function CriarFilial(){
                         <b>Id: </b><input id="id" type="text"></input><br/><br/>
                         <button onClick={postFiliais}>Criar</button><br/>
                     </center>
+                    </Fundo>
+                    </Background>
                 <Footer/>
 
             </>

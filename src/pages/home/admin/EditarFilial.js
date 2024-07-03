@@ -3,6 +3,23 @@ import Header from "../../../components/Header";
 import Footer from '../../../components/Footer';
 import {useState, useEffect} from "react";
 import icone_editar from  "../../../components/assets/images/editar.png";
+import styled from 'styled-components'; 
+import { Button, InputBox, Fundo } from '../../../components/styles/logincss';
+import ferramentasImage from '../../../components/styles/images/ferramentas.jpg';
+
+
+const Background = styled.div`
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  background-image: url(${props => props.backgroundImage}); // Usar a prop para definir a imagem de fundo
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+`;
 
 const URL_Servidor = "http://localhost:5000";
 const api = axios.create({
@@ -71,6 +88,8 @@ function EditarFilial(){
             <>
 
                 <Header position={"relative"}/>
+                <Background backgroundImage={ferramentasImage}>
+    <Fundo>
                     <center>
                         <br/><b>Filial</b><br/><br/>
                         <b>Nome: </b><input type="text" id="nome" defaultValue={filiais[0].nome_filial}></input><br/><br/>
@@ -94,6 +113,8 @@ function EditarFilial(){
                         <b>Id: </b><input id="id" type="text" defaultValue={filiais[0].id_filial}></input><br/><br/>
                         <button onClick={putFiliais}>Atualizar</button><br/>
                     </center>
+                    </Fundo>
+     </Background>
                 <Footer/>
 
             </>

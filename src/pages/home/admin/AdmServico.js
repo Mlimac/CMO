@@ -4,12 +4,27 @@ import Footer from '../../../components/Footer';
 import {useState, useEffect} from "react";
 import icone_editar from  "../../../components/assets/images/editar.png";
 import icone_lixo from  "../../../components/assets/images/lixo.png";
+import styled from 'styled-components'; 
+import { Button, InputBox, Fundo } from '../../../components/styles/logincss';
+import ferramentasImage from '../../../components/styles/images/ferramentas.jpg';
 
 const URL_Servidor = "http://localhost:5000";
 const api = axios.create({
    baseURL: URL_Servidor
 })
 
+const Background = styled.div`
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  background-image: url(${props => props.backgroundImage}); // Usar a prop para definir a imagem de fundo
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+`;
 
 
 
@@ -54,8 +69,11 @@ const [servicos, setServicos] = useState([]);
  
     return(
         <>
-    
+          
             <Header position={"relative"}/>
+            <Background backgroundImage={ferramentasImage}>
+              <Fundo>
+            
                 
             <center>
                 <br/><button onClick={() => {window.location.href="/CriarServico"}}>Criar Serviço</button>
@@ -80,7 +98,8 @@ const [servicos, setServicos] = useState([]);
                 
                 </table>
             </center>
-            
+            </Fundo>  
+            </Background>
             <Footer/>
     
         </>

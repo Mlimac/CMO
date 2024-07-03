@@ -3,12 +3,27 @@ import Header from '../../../components/Header';
 import styled from 'styled-components';
 import {useState, useEffect} from "react";
 import api from '../../../api/api';
-
+import { Button, InputBox, Fundo } from '../../../components/styles/logincss';
+import ferramentasImage from '../../../components/styles/images/ferramentas.jpg'; // Importar a imagem diretament
 //import { Button, InputBox} from '../../../components/styles/logincss';
 //import ferramentasImage from '../../../components/styles/images/ferramentas.jpg'; // Importar a imagem diretamente
 import Footer from '../../../components/Footer';
 //import { FundoCad } from '../../../components/styles/cadastrocss';
 import { Link } from 'react-router-dom';
+
+
+const Background = styled.div`
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  background-image: url(${props => props.backgroundImage}); // Usar a prop para definir a imagem de fundo
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+`;
 
 
 function Admin() {
@@ -45,12 +60,17 @@ function Admin() {
             <>
      
             <Header position={"relative"}/>
-            
+            <Background backgroundImage={ferramentasImage}>
+                <Fundo>
+              <h1>Página de ADM</h1>
             <center><br/><br/>
-                <a href="/AdmServico">Acessar Servicos</a><br/>
-                <a href="/AdmFilial">Acessar Filiais</a>
+               <Button> <a href="/AdmServico">Acessar Servicos</a><br/></Button>
+                <Button><a href="/AdmFilial">Acessar Filiais</a></Button>
             </center><br/><br/>
 
+
+            </Fundo>
+            </Background>
             <Footer />
             
             </> 

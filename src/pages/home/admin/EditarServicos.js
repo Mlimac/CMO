@@ -3,13 +3,28 @@ import Header from "../../../components/Header";
 import Footer from '../../../components/Footer';
 import {useState, useEffect} from "react";
 import icone_editar from  "../../../components/assets/images/editar.png";
+import styled from 'styled-components'; 
+import { Button, InputBox, Fundo } from '../../../components/styles/logincss';
+import ferramentasImage from '../../../components/styles/images/ferramentas.jpg'; // Importar a imagem diretamente
+
 
 const URL_Servidor = "http://localhost:5000";
 const api = axios.create({
  baseURL: URL_Servidor
 })
 
-
+const Background = styled.div`
+min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+overflow: hidden;
+position: relative;
+background-image: url(${props => props.backgroundImage}); // Usar a prop para definir a imagem de fundo
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+`;
  
 
 function EditarServicos(){
@@ -69,11 +84,13 @@ function EditarServicos(){
             <>
 
                 <Header position={"relative"}/>
+                <Background backgroundImage={ferramentasImage}>
+    <Fundo>
 
                     <center>
                         <br/><b>Serviços</b><br/><br/>
                         <b>Titulo: </b><input type="text" id="titulo" defaultValue={servicos[0].titulo_servico}></input><br/><br/>
-                        <b>Descrição: <br/></b><textarea id="descricao" style={{"width": "600px", "height": "200px"}} defaultValue={servicos[0].desc_servico}></textarea><br/>
+                        <b>Descrição: <br/></b><textarea id="descricao" style={{"width": "400px", "height": "200px"}} defaultValue={servicos[0].desc_servico}></textarea><br/>
                         <b>URL Imagem: </b><input id="url_imagem" type="text" defaultValue={servicos[0].img_servico}></input><br/>
                         {
                             servicos[0].ativo === 1 ? (
@@ -93,6 +110,8 @@ function EditarServicos(){
                         <button onClick={putServicos}>Atualizar</button><br/>
                         
                     </center>
+                    </Fundo>
+     </Background>
                 <Footer/>
                 
              </>
