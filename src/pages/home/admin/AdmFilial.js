@@ -3,12 +3,12 @@ import Header from "../../../components/Header";
 import Footer from '../../../components/Footer';
 import {useState, useEffect} from "react";
 import icone_editar from  "../../../components/assets/images/editar.png";
-import icone_lixo from  "../../../components/assets/images/lixo.png";
-import { Button, InputBox, Fundo } from '../../../components/styles/logincss';
+import { Fundo } from '../../../components/styles/logincss';
 import ferramentasImage from '../../../components/styles/images/ferramentas.jpg';
 import styled from 'styled-components';
 
 const URL_Servidor = "http://localhost:5000";
+
 const api = axios.create({
    baseURL: URL_Servidor
 })
@@ -26,12 +26,9 @@ const Background = styled.div`
   background-repeat: no-repeat;
 `;
 
-
 function AdmFilial(){
 
-
-const [filiais, setFiliais] = useState([]);
-
+  const [filiais, setFiliais] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -53,60 +50,38 @@ const [filiais, setFiliais] = useState([]);
     fetchData();
   }, []);
 
-  
-  /*function deleteServico(id_servico_del){
-
-    try {
-
-      const { data } = api.delete('/servicos/' + id_servico_del);
-      alert("Serviço removido com sucesso");
-    } catch (error) {
-      alert(error);
-    }
-      //<td> <a href="javascript:void(0)" onClick={() => deleteServico(d.id_servico)}><img src={icone_lixo}  height="20px;"/></a></td>
-  }*/
-
-
-    return(
-        <>
-    
-            <Header position={"relative"}/>
-            <Background backgroundImage={ferramentasImage}>
-              <Fundo>
-                
+  return(
+      <>
+        <Header position={"relative"}/>
+        <Background backgroundImage={ferramentasImage}>
+          <Fundo>
             <center>
                 <br/><button onClick={() => {window.location.href="/CriarFilial"}}>Criar Filial</button>
                 <table>
-                <caption>
-                <h1>Filiais:</h1>
-            </caption>
-            <br/>
-
-                <tbody>
-                
-                  {filiais.map((d, index) => (
-                      <> <tr>
-                      
-                      <th scope="row" style={{"font-weight":"normal"}}>{d.nome_filial}</th>
-                      <td><a href={"/EditarFilial?id=" + d.id_filial}> <img src={icone_editar} height="20px;"/></a></td>
-                      
-                      </tr><br/></>
-                  ))}
-                    
-                </tbody>
-                
+                  <caption>
+                    <h1>Filiais:</h1>
+                  </caption>
+                  <br/>
+                  <tbody>
+                    {
+                      filiais.map((d, index) => (
+                          <> 
+                            <tr>
+                              <th scope="row" style={{"font-weight":"normal"}}>{d.nome_filial}</th>
+                              <td><a href={"/EditarFilial?id=" + d.id_filial}> <img src={icone_editar} height="20px;"/></a></td>
+                            </tr>
+                            <br/>
+                          </>
+                      ))
+                    }
+                  </tbody>
                 </table>
             </center>
-            </Fundo>  
-            </Background>
-            <Footer/>
-    
-        </>
-    
-    )
-
-
+          </Fundo>  
+        </Background>
+        <Footer/>
+      </>
+  )
 }
-
 
 export default AdmFilial

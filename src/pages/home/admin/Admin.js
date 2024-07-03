@@ -3,14 +3,9 @@ import Header from '../../../components/Header';
 import styled from 'styled-components';
 import {useState, useEffect} from "react";
 import api from '../../../api/api';
-import { Button, InputBox, Fundo } from '../../../components/styles/logincss';
+import { Button, Fundo } from '../../../components/styles/logincss';
 import ferramentasImage from '../../../components/styles/images/ferramentas.jpg'; // Importar a imagem diretament
-//import { Button, InputBox} from '../../../components/styles/logincss';
-//import ferramentasImage from '../../../components/styles/images/ferramentas.jpg'; // Importar a imagem diretamente
 import Footer from '../../../components/Footer';
-//import { FundoCad } from '../../../components/styles/cadastrocss';
-import { Link } from 'react-router-dom';
-
 
 const Background = styled.div`
   min-height: 100vh;
@@ -25,12 +20,10 @@ const Background = styled.div`
   background-repeat: no-repeat;
 `;
 
-
 function Admin() {
     
     const [renderizar, setRenderizar] = useState(false);
     useEffect(() => {
-
         if("token" in sessionStorage ? sessionStorage.getItem('token').length > 0 : false){
             api.get('/verificarLogin', { headers: {"x-access-token" : sessionStorage.getItem("token")} })
             .then((response) => {
@@ -45,39 +38,31 @@ function Admin() {
             .catch((error) => {
                 sessionStorage.setItem('token', '')
                 window.location.href = "/";
-                });
-            }
+                }
+            );
+        }
         else{
         setRenderizar(false);
         }
-        
     }, []);
-
-
 
     if(renderizar){
         return (
-            <>
-     
-            <Header position={"relative"}/>
-            <Background backgroundImage={ferramentasImage}>
-                <Fundo>
-              <h1>Página de ADM</h1>
-            <center><br/><br/>
-               <Button> <a href="/AdmServico">Acessar Servicos</a><br/></Button>
-                <Button><a href="/AdmFilial">Acessar Filiais</a></Button>
-            </center><br/><br/>
-
-
-            </Fundo>
-            </Background>
-            <Footer />
-            
+            <> 
+                <Header position={"relative"}/>
+                <Background backgroundImage={ferramentasImage}>
+                    <Fundo>
+                        <h1>Página de ADM</h1>
+                        <center><br/><br/>
+                        <Button> <a href="/AdmServico">Acessar Servicos</a><br/></Button>
+                            <Button><a href="/AdmFilial">Acessar Filiais</a></Button>
+                        </center><br/><br/>
+                    </Fundo>
+                </Background>
+                <Footer />
             </> 
-     
          );
     }
-    
 }
 
 export default Admin;

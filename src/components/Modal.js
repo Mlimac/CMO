@@ -8,22 +8,20 @@ function Modal(){
   const toggleModal = () => {
     setModal(!modal)
   }
-    return(
-        <>
+  return(
+      <>
         <button onClick={toggleModal}className='btn-modal'> 
         
         open</button>
 
         <div className='modal'>
-         <div className='overlay'></div>
-         <div className='modal-content'>
+        <div className='overlay'></div>
+        <div className='modal-content'>
         <img src={minutos}></img>
-         </div>
         </div>
-        
-
-        </>
-    )
+        </div>        
+      </>
+  )
 }
 
 export default Modal

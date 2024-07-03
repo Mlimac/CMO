@@ -3,15 +3,15 @@ import Header from "../../../components/Header";
 import Footer from '../../../components/Footer';
 import {useState, useEffect} from "react";
 import icone_editar from  "../../../components/assets/images/editar.png";
-import icone_lixo from  "../../../components/assets/images/lixo.png";
 import styled from 'styled-components'; 
-import { Button, InputBox, Fundo } from '../../../components/styles/logincss';
+import { Fundo } from '../../../components/styles/logincss';
 import ferramentasImage from '../../../components/styles/images/ferramentas.jpg';
 
 const URL_Servidor = "http://localhost:5000";
+
 const api = axios.create({
    baseURL: URL_Servidor
-})
+});
 
 const Background = styled.div`
   min-height: 100vh;
@@ -30,9 +30,7 @@ const Background = styled.div`
 
 function AdmServico(){
 
-
-const [servicos, setServicos] = useState([]);
-
+  const [servicos, setServicos] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -67,45 +65,44 @@ const [servicos, setServicos] = useState([]);
       //<td> <a href="javascript:void(0)" onClick={() => deleteServico(d.id_servico)}><img src={icone_lixo}  height="20px;"/></a></td>
   }*/
  
-    return(
-        <>
+  return(
+    <>
+        
+      <Header position={"relative"}/>
+      <Background backgroundImage={ferramentasImage}>
+        <Fundo>
+      
           
-            <Header position={"relative"}/>
-            <Background backgroundImage={ferramentasImage}>
-              <Fundo>
-            
-                
-            <center>
-                <br/><button onClick={() => {window.location.href="/CriarServico"}}>Criar Serviço</button>
-                <table>
-                <caption>
-                <h1>Serviços:</h1>
-            </caption>
-            <br/>
+      <center>
+          <br/><button onClick={() => {window.location.href="/CriarServico"}}>Criar Serviço</button>
+          <table>
+          <caption>
+          <h1>Serviços:</h1>
+      </caption>
+      <br/>
 
-                <tbody>
+          <tbody>
+          
+            {servicos.map((d, index) => (
+                <> <tr>
                 
-                  {servicos.map((d, index) => (
-                      <> <tr>
-                      
-                      <th scope="row" style={{"font-weight":"normal"}}>{d.titulo_servico}</th>
-                      <td><a href={"/EditarServicos?id=" + d.id_servico}> <img src={icone_editar} height="20px;"/></a></td>
-                      
-                      </tr><br/></>
-                  ))}
-                    
-                </tbody>
+                <th scope="row" style={{"font-weight":"normal"}}>{d.titulo_servico}</th>
+                <td><a href={"/EditarServicos?id=" + d.id_servico}> <img src={icone_editar} height="20px;"/></a></td>
                 
-                </table>
-            </center>
-            </Fundo>  
-            </Background>
-            <Footer/>
-    
-        </>
-    
-    )
-
+                </tr><br/></>
+            ))}
+              
+          </tbody>
+          
+          </table>
+      </center>
+      </Fundo>  
+      </Background>
+      <Footer/>
+  
+    </>
+  
+  )
 
 }
 

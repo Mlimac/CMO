@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
 import styled from 'styled-components'; 
-import { Button, InputBox, Fundo } from '../../../components/styles/logincss';
+import { Fundo } from '../../../components/styles/logincss';
 import ferramentasImage from '../../../components/styles/images/ferramentas.jpg'; // Importar a imagem diretamente
 
 
@@ -20,7 +20,9 @@ const FormularioProblema = () => {
     setNome('');
     setEmail('');
     setAssunto('');
+
   };
+  
   const Background = styled.div`
   min-height: 100vh;
   display: flex;

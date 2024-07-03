@@ -2,11 +2,9 @@ import axios from 'axios';
 import Header from "../../../components/Header";
 import Footer from '../../../components/Footer';
 import {useState, useEffect} from "react";
-import icone_editar from  "../../../components/assets/images/editar.png";
 import styled from 'styled-components'; 
-import { Button, InputBox, Fundo } from '../../../components/styles/logincss';
+import { Fundo } from '../../../components/styles/logincss';
 import ferramentasImage from '../../../components/styles/images/ferramentas.jpg'; // Importar a imagem diretamente
-
 
 const URL_Servidor = "http://localhost:5000";
 const api = axios.create({
@@ -26,14 +24,12 @@ background-position: center;
 background-repeat: no-repeat;
 `;
  
-
 function EditarServicos(){
 
     var id = 0;
     const putServicos = async () => {
         if("token" in sessionStorage ? sessionStorage.getItem('token').length > 0 : false){
             try {
-
                 let titulo = document.getElementById("titulo").value;
                 let descricao = document.getElementById("descricao").value;
                 let url_imagem = document.getElementById("url_imagem").value;
@@ -42,7 +38,7 @@ function EditarServicos(){
                 //alert(descricao);
                 let url = new URL(window.location.href);    
                 id = url.searchParams.get("id");
-                const { data } = await api.put('/servicos'+id, new URLSearchParams("titulo=" + titulo + "&desc_servico=" + descricao + "&img_servico=" + url_imagem + "&ativo=" + ativo + "&ordem=" + ordem), {headers: {"x-access-token" : sessionStorage.getItem("token")}} );
+                api.put('/servicos'+id, new URLSearchParams("titulo=" + titulo + "&desc_servico=" + descricao + "&img_servico=" + url_imagem + "&ativo=" + ativo + "&ordem=" + ordem), {headers: {"x-access-token" : sessionStorage.getItem("token")}} );
                 alert("Serviço editado com sucesso");
             } catch (error) {
                 alert(error.response.data);
@@ -54,39 +50,28 @@ function EditarServicos(){
         }
     }
 
-
     const [servicos, setServicos] = useState([]);
 
-    
-
     useEffect(() => {
-        
         async function fetchData() {
             try {
-
-
-            let url = new URL(window.location.href);    
-            id = url.searchParams.get("id");
-            const { data } = await api.get('/servicos' + id);
-            setServicos(data);
+                let url = new URL(window.location.href);    
+                id = url.searchParams.get("id");
+                const { data } = await api.get('/servicos' + id);
+                setServicos(data);
             } catch (error) {
-            console.log(error);
+                console.log(error);
             }
         }
-
         fetchData();
     }, []);
 
-
     if (servicos.length > 0) {
-
         return(
             <>
-
                 <Header position={"relative"}/>
                 <Background backgroundImage={ferramentasImage}>
-    <Fundo>
-
+                <Fundo>
                     <center>
                         <br/><b>Serviços</b><br/><br/>
                         <b>Titulo: </b><input type="text" id="titulo" defaultValue={servicos[0].titulo_servico}></input><br/><br/>
@@ -108,17 +93,13 @@ function EditarServicos(){
                         }
                         <b>Ordem: </b><input id="ordem" type="text" defaultValue={servicos[0].ordem_apresentacao}></input><br/><br/>
                         <button onClick={putServicos}>Atualizar</button><br/>
-                        
                     </center>
-                    </Fundo>
-     </Background>
+                </Fundo>
+                </Background>
                 <Footer/>
-                
              </>
-
         )
-    }
-    
+    }    
 }
 
- export default EditarServicos
+export default EditarServicos

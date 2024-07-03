@@ -2,15 +2,15 @@ import { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import image1 from './assets/images/microndas.png';
+/*import image1 from './assets/images/microndas.png';
 import image2 from './assets/images/forno.png';
 import image3 from './assets/images/entrega.jpg';
 import image4 from './assets/images/acessorios.png';
 import image5 from './assets/images/reforma.png';
-import image6 from './assets/images/novos.png';
+import image6 from './assets/images/novos.png';*/
 import api from '../api/api.js'
 
-const data1 = [
+/*const data1 = [
   {
     name: 'Conserto de Microondas',
     img: image1,
@@ -41,7 +41,7 @@ const data1 = [
     img: image3,
     review: 'Buscamos seu aparelho em toda Curitiba',
   }
-];
+];*/
 
 
 function Slide() {

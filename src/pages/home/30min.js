@@ -1,12 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Min from "../../../src/components/styles/images/30minutos.jpg"
 import styled from 'styled-components'; 
-import { Button, InputBox, Fundo } from '../../components/styles/logincss';
 import ferramentasImage from '../../components/styles/images/ferramentas.jpg'; // Importar a imagem diretamente
-
-
 
 const Background = styled.div`
   min-height: 100vh;
@@ -21,18 +18,18 @@ const Background = styled.div`
   background-repeat: no-repeat;
 `;
 
-function Minutos  () {
+function Minutos(){
 
-    return (
-      <>
+  return (
+    <>
       <Header position={"relative"}/>
       <Background backgroundImage={ferramentasImage}>
       <img src={Min}></img>
       </Background>
       <Footer/>
-      </>
-    );
-  };
- 
+    </>
+  );
 
+};
+ 
 export default Minutos;

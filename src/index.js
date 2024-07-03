@@ -3,10 +3,9 @@ import ReactDOM from 'react-dom/client';
 import Page1 from './pages/home/home/Page1';
 import Login from './pages/home/login/Loginpage'
 import Admin from './pages/home/admin/Admin'
-import { BrowserRouter, RouterProvider, createBrowserRouter} from 'react-router-dom';
+import {RouterProvider, createBrowserRouter} from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 import ErrorPage from './pages/home/error/error';
-import Form from './pages/home/form/form';
 import FormularioProblema from './pages/home/form/form';
 import AdmServico from './pages/home/admin/AdmServico';
 import EditarServicos from './pages/home/admin/EditarServicos';
@@ -61,13 +60,11 @@ import Minutos from "./pages/home/30min"
     path:"EditarFilial",
     element:<EditarFilial/>,
     },
-    ,
+
 {   
     path:"30min",
     element:<Minutos/>,
     },
-    
-
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import styles from './styles/Header.css'; // Importe o arquivo de estilo CSS
 
 import logo from './styles/images/logocmo.png';
 import user from './styles/images/Usuario.png';
@@ -53,7 +52,6 @@ function Header({position}) {
     return () => clearTimeout(timer);
   }, [buttonsVisible]);
 
-
   function Deslogar(){
 
     sessionStorage.setItem('token', '');
@@ -62,6 +60,7 @@ function Header({position}) {
   }
 
   const [renderizar, setRenderizar] = useState(false);
+
   useEffect(() => {
 
     if("token" in sessionStorage ? sessionStorage.getItem('token').length > 0 : false){
@@ -87,16 +86,10 @@ function Header({position}) {
       
   }, []);
 
-
-
-
   if(renderizar){
 
-
     return (
-   
-   
-
+     
       <nav>
         <div className="header" style={{"--position" : position}}>
           <div className="header__left">
@@ -134,8 +127,8 @@ function Header({position}) {
                         
                         (
                           <>
-                          <Link to='/admin'> <button className="botoes-menu">Admin</button></Link>
-                          <button className="botoes-menu" onClick={Deslogar}>Sair</button>
+                            <Link to='/admin'> <button className="botoes-menu">Admin</button></Link>
+                            <button className="botoes-menu" onClick={Deslogar}>Sair</button>
                           </>
                         ) :  
                         
@@ -143,7 +136,7 @@ function Header({position}) {
                           <Link to='/login'> <button className="botoes-menu">Login</button></Link>
                         ) 
                     )     
-                }
+                  }
                 </div>
               )}
             </div>

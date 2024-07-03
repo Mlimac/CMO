@@ -2,11 +2,9 @@ import axios from 'axios';
 import Header from "../../../components/Header";
 import Footer from '../../../components/Footer';
 import {useState, useEffect} from "react";
-import icone_editar from  "../../../components/assets/images/editar.png";
 import styled from 'styled-components'; 
-import { Button, InputBox, Fundo } from '../../../components/styles/logincss';
+import { Fundo } from '../../../components/styles/logincss';
 import ferramentasImage from '../../../components/styles/images/ferramentas.jpg';
-
 
 const Background = styled.div`
   min-height: 100vh;
@@ -26,9 +24,6 @@ const api = axios.create({
  baseURL: URL_Servidor
 })
 
-
- 
-
 function EditarFilial(){
 
     var id = 0;
@@ -45,7 +40,7 @@ function EditarFilial(){
 
                 let url = new URL(window.location.href);    
                 id = url.searchParams.get("id");
-                const { data } = await api.put('/filiais'+id, new URLSearchParams("nome=" + nome + "&bairro=" + bairro + "&endereco=" + endereco + "&ativo=" + ativo + "&url=" + url_mapa + "&id=" + idFilial), {headers: {"x-access-token" : sessionStorage.getItem("token")}} );
+                await api.put('/filiais'+id, new URLSearchParams("nome=" + nome + "&bairro=" + bairro + "&endereco=" + endereco + "&ativo=" + ativo + "&url=" + url_mapa + "&id=" + idFilial), {headers: {"x-access-token" : sessionStorage.getItem("token")}} );
                 alert("Filial atualizada com sucesso");
             } catch (error) {
                 alert(error.response.data);
@@ -57,39 +52,30 @@ function EditarFilial(){
         }
     }
 
-
-
     const [filiais, setFiliais] = useState([]);
 
-    
-
     useEffect(() => {
-        
+
         async function fetchData() {
             try {
 
-
-            let url = new URL(window.location.href);    
-            id = url.searchParams.get("id");
-            const { data } = await api.get('/filiais' + id);
-            setFiliais(data);
+                let url = new URL(window.location.href);    
+                id = url.searchParams.get("id");
+                const { data } = await api.get('/filiais' + id);
+                setFiliais(data);
             } catch (error) {
-            console.log(error);
+                console.log(error);
             }
         }
-
         fetchData();
     }, []);
 
-
     if (filiais.length > 0) {
-
         return(
             <>
-
                 <Header position={"relative"}/>
                 <Background backgroundImage={ferramentasImage}>
-    <Fundo>
+                <Fundo>
                     <center>
                         <br/><b>Filial</b><br/><br/>
                         <b>Nome: </b><input type="text" id="nome" defaultValue={filiais[0].nome_filial}></input><br/><br/>
@@ -114,14 +100,11 @@ function EditarFilial(){
                         <button onClick={putFiliais}>Atualizar</button><br/>
                     </center>
                     </Fundo>
-     </Background>
+                </Background>
                 <Footer/>
-
             </>
-
         )
     }
-    
 }
 
  export default EditarFilial
