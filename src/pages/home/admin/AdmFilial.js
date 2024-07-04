@@ -30,9 +30,9 @@ function AdmFilial(){
 
   const [filiais, setFiliais] = useState([]);
 
-  useEffect(() => {
+  useEffect(() => { 
     async function fetchData() {
-      if("token" in sessionStorage ? sessionStorage.getItem('token').length > 0 : false){
+      if("token" in sessionStorage ? sessionStorage.getItem('token').length > 0 : false){ //Verificando se existe o token no sessionStorage e verificando se a variável contém o token.
         try {
           
             const { data } = await api.get('/filiais', {headers: {"x-access-token" : sessionStorage.getItem("token")}});

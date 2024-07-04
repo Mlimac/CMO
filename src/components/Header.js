@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import styles from './styles/Header.css'; // Importe o arquivo de estilo CSS
+
 import logo from './styles/images/logocmo.png';
 import user from './styles/images/Usuario.png';
 import api from "../api/api"
